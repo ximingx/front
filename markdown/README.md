@@ -5,8 +5,10 @@
 需要补充
 
 - html
-
 - css
+- js
+- 工程化
+- node
 
 ---
 
@@ -20,6 +22,10 @@
 
 正在进行
 
-- javascript
+- Vue
 
 ---
+
+未完成
+
+- react

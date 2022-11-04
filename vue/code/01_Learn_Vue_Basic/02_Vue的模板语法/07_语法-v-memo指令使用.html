@@ -8,6 +8,7 @@
 <body>
 
   <div id="app">
+    <!--v-memo-->
     <div v-memo="[name, age]">
       <h2>姓名: {{ name }}</h2>
       <h2>年龄: {{ age }}</h2>
@@ -32,7 +33,7 @@
       methods: {
         updateInfo: function() {
           // this.name = "kobe"
-          this.age = 20
+          this.height = this.height + 2
         }
       }
     })
