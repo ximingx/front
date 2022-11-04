@@ -15,15 +15,8 @@
   <div id="app">
     <!-- 1.内容一: -->
     <product-item></product-item>
-    
-    <!-- 2.内容二: -->
-    <product-item></product-item>
-
-    <!-- 3.内容三: -->
     <product-item></product-item>
   </div>
-
-
   <!-- 组件product-item的模板 -->
   <template id="item">
     <div class="product">
@@ -33,27 +26,24 @@
       <p>商品描述信息, 9.9秒杀</p>
     </div>
   </template>
-  
   <script src="../lib/vue.js"></script>
   <script>
     /*
-      1.通过app.component(组件名称, 组件的对象)
-      2.在App组件的模板中, 可以直接使用product-item的组件
+      1. 通过app.component(组件名称, 组件的对象)
+      2. 在App组件的模板中, 可以直接使用product-item的组件
     */
 
     // 1.组件: App组件(根组件)
     const App = {}
-
-    // 2.创建app
     const app = Vue.createApp(App)
 
-    // 3.注册一个全局组件
-    // product-item全局组件
-    app.component("product-item", {
+    // 2.注册一个全局组件 product-item
+    const productItem = {
       template: "#item"
-    })
+    }
+    app.component("product-item", productItem)
 
-    // 2.挂载app
+    // 3.挂载app
     app.mount("#app")
   </script>
 </body>
