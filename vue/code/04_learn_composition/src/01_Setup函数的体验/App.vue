@@ -1,14 +1,5 @@
-<template>
-  <div class="app">
-    <!-- template中ref对象自动解包 -->
-    <h2>当前计数: {{ counter }}</h2>
-    <button @click="increment">+1</button>
-    <button @click="decrement">-1</button>
-  </div>
-</template>
-
 <script>
-import { ref } from 'vue'
+import {ref} from 'vue'
 import useCounter from './hooks/useCounter'
 
 export default {
@@ -31,6 +22,15 @@ export default {
   }
 }
 </script>
+
+<template>
+  <div class="app">
+    <!-- template中ref对象自动解包 -->
+    <h2>当前计数: {{ counter }}</h2>
+    <button @click="increment">+1</button>
+    <button @click="decrement">-1</button>
+  </div>
+</template>
 
 <style>
 </style>
