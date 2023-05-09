@@ -1,0 +1,130 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*
+            clip-path: 裁剪
+                1. circle(半径)  圆形
+                2. ellipse(半径) 椭圆
+                3. inset(内边距)  内部
+                4. polygon(多边形) 多边形
+
+            https://bennettfeely.com/clippy/
+        */
+        /*.common-layout {*/
+        /*    display: flex;*/
+        /*    justify-content: center;*/
+        /*    align-items: center;*/
+        /*    width: 100%;*/
+        /*}*/
+
+        /*.class1-image {*/
+        /*    width: 200px;*/
+        /*    height: 200px;*/
+        /*    clip-path: circle(50% at 50% 50%);*/
+        /*    !*  半径 at 圆心位置  *!*/
+        /*}*/
+
+        /*.class2-image {*/
+        /*    width: 200px;*/
+        /*    height: 200px;*/
+        /*    clip-path: inset(10% 30% 50% 20%);*/
+        /*    !* 裁剪距离 上 右 下 左 的距离 *!*/
+        /*}*/
+
+        /*.class3-image {*/
+        /*    width: 200px;*/
+        /*    height: 200px;*/
+        /*    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);*/
+        /*    !* 顶点坐标 *!*/
+        /*}*/
+
+        /*.class4-image {*/
+        /*    width: 200px;*/
+        /*    height: 200px;*/
+        /*    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);*/
+        /*    transition: all 1s;*/
+        /*}*/
+
+        /*.class4-image:hover {*/
+        /*    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);*/
+        /*}*/
+
+        .class5 {
+            width: 80%;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url("./assets/2.jpeg") no-repeat center/cover;
+        }
+
+        .class5 h1{
+            color: #ccc;
+            font-size: 50px;
+            animation: move 2s forwards;
+        }
+
+        @keyframes move {
+            0% {
+                clip-path: inset(100% 0% 0% 0%);
+                /* transform: translateY(-100%);向上100% */
+                transform: translateY(-100%);
+            }
+            100% {
+                clip-path: inset(0% 0% 0% 0%);
+                transform: translateY(0);
+            }
+        }
+
+        .img-box {
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .img-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: all 1s;
+        }
+
+        .img-box img:nth-child(2) {
+            clip-path: polygon(-30% 0, -30% 0, 0 50%,-30% 100%, -30% 100%);
+        }
+
+        .img-box:hover img:nth-child(2) {
+            clip-path: polygon(-30% 0, 100% 0, 100% 50%,100% 100%, -30% 100%);
+        }
+
+    </style>
+</head>
+<body>
+<!--<div class="class1 common-layout">-->
+<!--    <img src="./assets/1.jpeg" alt="" class="class1-image">-->
+<!--</div>-->
+<!--<div class="class2 common-layout">-->
+<!--    <img src="./assets/1.jpeg" alt="" class="class2-image">-->
+<!--</div>-->
+<!--<div class="class3 common-layout">-->
+<!--    <img src="./assets/1.jpeg" alt="" class="class3-image">-->
+<!--</div>-->
+<!--<div class="class4 common-layout">-->
+<!--    <img src="./assets/2.jpeg" alt="" class="class4-image">-->
+<!--</div>-->
+<div class="class5 common-layout">
+    <h1>some text</h1>
+</div>
+<div class="img-box">
+    <img src="./assets/2.jpeg" alt="">
+    <img src="./assets/3.jpeg" alt="">
+</div>
+</body>
+</html>

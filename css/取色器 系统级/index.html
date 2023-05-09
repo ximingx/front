@@ -1,0 +1,35 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<button>取色</button>
+
+<img src="https://picsum.photos/200/300?random=1">
+
+<div></div>
+<span></span>
+
+<script>
+    const button = document.querySelecutton');
+    const span = document.querySelector('span');
+    const box = document.querySelector('div');
+    box.style.width = '100px';
+    box.style.height = '100px';
+    button.addEventListener('click', async () => {
+        const dropper = new EyeDropper();
+        try {
+            const result = await dropper.open();
+            box.style.backgroundColor = span.textContent = result.sRGBHex;
+        } catch (e) {
+            console.log(e);
+        }
+    });
+</script>
+</body>
+</html>
